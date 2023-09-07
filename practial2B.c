@@ -27,7 +27,7 @@ int binarySearch(int a[] , int search ,int size){
 
 void main()
 {
-    int size,search;
+    int size,search,temp;
     printf("Enter the size : ");
     scanf("%d", &size);
             printf("\n");
@@ -41,7 +41,18 @@ void main()
         scanf("%d", &a[i]);
         printf("\n");
     }
-
+    for(int i=0 ; i< size ;i++){
+        for(int j=i ;j<size ;j++){
+            if(a[i] > a[j]){
+                temp = a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(int i=0 ;i<size  ;i++){
+        printf("Element %d : %d \n",i,a[i]);
+    }
     printf("Enter the search Element : \n" ); 
     scanf("%d" , &search);
             printf("\n");
